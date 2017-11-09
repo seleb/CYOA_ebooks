@@ -1,13 +1,19 @@
 Markov = require('./markov.js');
 corpus = require('./corpus.js');
 
-markov = new Markov({
+markov1 = new Markov({
 	source: corpus,
 	minOrder:2,
 	maxOrder:9,
 	delimeter: ''
 });
+markov2 = new Markov({
+	source: corpus,
+	minOrder:1,
+	maxOrder:3,
+	delimeter: ' '
+});
 
 exports = module.exports = function(){
-	return markov.randomSequence(undefined, Markov.until.bind(undefined, '\0'))
+	return (Math.random() < 0.5 ? markov1 : markov2).randomSequence(undefined, Markov.until.bind(undefined, '\0'))
 };
