@@ -1,0 +1,18 @@
+{
+	"homepage": "https://twitter.com/CYOA_ebooks",
+	"email": "sean.s.leblanc@gmail.com",
+	"name": "CYOA_ebooks",
+	"description": "source for https://twitter.com/CYOA_ebooks",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/npm/npm.git"
+	},
+	"main": "main.js",
+	"dependencies": {
+		"twitter": "~1.7.1"
+	},
+	"scripts":{
+		"tweet": "node main.js",
+		"test": "node test.js"
+	}
+}
