@@ -15,5 +15,17 @@ markov2 = new Markov({
 });
 
 exports = module.exports = function(){
-	return (Math.random() < 0.5 ? markov1 : markov2).randomSequence(undefined, Markov.until.bind(undefined, '\0'))
+	var s = (Math.random() < 0.5 ? markov1 : markov2).randomSequence(undefined, Markov.until.bind(undefined, '\0'));
+	
+	// fix mismatched quotation marks
+	if((s.match(/"/g) || []).length % 2 == 1){
+		if(s.match(/page \d*\.$/)){
+			console.log('mismatched quotes');
+			s = s.split(/\s*(?=page \d*\.$)/);
+			s.splice(-1,0,'," ');
+			s = s.join('');
+		}
+	}
+
+	return s;
 };
