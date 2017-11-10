@@ -4,13 +4,13 @@ corpus = require('./corpus.js');
 markov1 = new Markov({
 	source: corpus,
 	minOrder:2,
-	maxOrder:9,
+	maxOrder:10,
 	delimeter: ''
 });
 markov2 = new Markov({
 	source: corpus,
 	minOrder:1,
-	maxOrder:3,
+	maxOrder:4,
 	delimeter: ' '
 });
 
