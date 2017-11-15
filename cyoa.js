@@ -24,7 +24,6 @@ exports = module.exports = function(){
 	// fix mismatched quotation marks
 	if((s.match(/"/g) || []).length % 2 == 1){
 		if(s.match(/page \d*\.$/)){
-			console.log('mismatched quotes');
 			s = s.split(/\s*(?=page \d*\.$)/);
 			s.splice(-1,0,'," ');
 			s = s.join('');
