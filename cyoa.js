@@ -3,7 +3,7 @@ corpus = require('./corpus.js');
 
 markov1 = new Markov({
 	source: corpus,
-	minOrder:2,
+	minOrder:4,
 	maxOrder:10,
 	delimeter: ''
 });
